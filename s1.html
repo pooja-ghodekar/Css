@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  position: relative;
+  overflow: none;
+  height 100vh;
+  width: 100vw;
+}
+
+.flying-bird {
+  width: 30px;
+  height: 6px;
+  background: #612e42;
+  border-radius: 0px 0px 3px 100%;
+  position: relative;
+}
+
+.flying-bird:after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 5px;
+  background-color: #612e42;
+  right: -5px;
+  position: absolute;
+  border-radius: 0px 100% 0px 0px;
+}
+
+.flying-bird:before {
+  content: "";
+  display: block;
+  height: 23px;
+  width: 15px;
+  background-color: #612e42;
+  top: 4px;
+  right: 1px;
+  position: absolute;
+  border-radius: 0px 0px 100% 0px;
+  transform-origin: 100% 0%;
+transform: rotate(12deg) rotateX(110deg);
+  animation: wings 2s infinite;
+}
+
+.flying-bird-container {
+  position: absolute;
+  top: 100px;
+  animation: flying-bird linear 15s infinite;
+}
+
+.flying-bird-container:nth-child(2) {
+  top: 150px;
+  animation: flying-bird ease-in 15s infinite;
+  transform: scale(0.3);
+}
+
+.flying-bird-container:nth-child(3) {
+  top: 200px;
+  animation: flying-bird linear 15s infinite;
+  animation-delay: 0.4s;
+}
+
+.flying-bird-container:nth-child(2) .flying-bird:before {
+   animation: wings 1.3s infinite;
+}
+
+
+
+@keyframes wings {
+  0% {
+    transform: rotate(12deg)rotateX(110deg);
+  }
+  30% {
+    transform: rotate(12deg)rotateX(0deg);
+  }
+  100% {
+    transform: rotate(12deg)rotateX(110deg);
+  }
+}
+
+@keyframes flying-bird {
+  0% {transform: translateX(-1000px)}
+  100% {transform: translateX(2000px)}
+}
+
+    </style>
+</head>
+<body>
+    <div class="flying-bird-container">
+        <div class="flying-bird">
+        </div>
+        </div>
+        
+        <div class="flying-bird-container">
+        <div class="flying-bird">
+        </div>
+        </div>
+        
+        <div class="flying-bird-container">
+        <div class="flying-bird">
+        </div>
+        </div>
+    
+</body>
+</html>
